@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - ChatGPT Owner 降级控制台</title>
+    <link rel="icon" type="image/png" href="/static/favicon.png">
+    <link rel="stylesheet" href="/static/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg">
+        <div class="bg-orb orb-1"></div>
+        <div class="bg-orb orb-2"></div>
+        <div class="bg-orb orb-3"></div>
+        <div class="bg-grid"></div>
+    </div>
+
+    <main class="login-shell">
+        <section class="brand">
+            <div class="brand-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                    <path d="M2 17l10 5 10-5" />
+                    <path d="M2 12l10 5 10-5" />
+                </svg>
+            </div>
+            <h1>Owner 降级控制台</h1>
+            <p class="tagline">安全访问 · 专注执行 · 全流程可追踪</p>
+            <div class="hint">
+                <span>请使用管理员账号登录。</span>
+                <span>如未配置，设置环境变量 <code>ADMIN_PASSWORD</code>。</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-header">
+                <h2>欢迎回来</h2>
+                <p>请输入账号与密码进入控制台</p>
+            </div>
+
+            <form id="loginForm" class="form">
+                <label class="field">
+                    <span>用户名</span>
+                    <input id="username" name="username" type="text" autocomplete="username" placeholder="admin" required />
+                </label>
+
+                <label class="field">
+                    <span>密码</span>
+                    <div class="password-wrap">
+                        <input id="password" name="password" type="password" autocomplete="current-password" placeholder="请输入密码" required />
+                        <button type="button" class="toggle" id="togglePassword">显示</button>
+                    </div>
+                </label>
+
+                <div class="alert" id="alert" role="status" aria-live="polite"></div>
+
+                <button class="submit" id="submitBtn" type="submit">
+                    <span>登录</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14" />
+                        <path d="M13 5l7 7-7 7" />
+                    </svg>
+                </button>
+
+                <div class="meta">
+                    <span>登录即表示你有权限操作相关账号</span>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="/static/login.js"></script>
+</body>
+
+</html>

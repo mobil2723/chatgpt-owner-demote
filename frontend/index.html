@@ -23,7 +23,11 @@
                 <h1>ChatGPT Owner 降级控制台</h1>
             </div>
             <p class="subtitle">批量将 ChatGPT Team/Enterprise 所有者降级为管理员或普通成员</p>
-        </header>
+        
+            <button class="btn btn-ghost" id="logoutBtn" onclick="logout()">
+                退出登录
+            </button>
+</header>
 
         <!-- 统计面板 -->
         <div class="stats-panel">
@@ -77,8 +81,8 @@
                     <div class="role-toggle">
                         <label class="toggle-label">目标角色：</label>
                         <div class="toggle-buttons">
-                            <button class="toggle-btn active" data-role="standard-user">普通成员</button>
-                            <button class="toggle-btn" data-role="account-admin">管理员</button>
+                            <button class="toggle-btn" data-role="standard-user">普通成员</button>
+                            <button class="toggle-btn active" data-role="account-admin">管理员</button>
                         </div>
                     </div>
                 </div>

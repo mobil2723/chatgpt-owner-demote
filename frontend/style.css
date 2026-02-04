@@ -532,3 +532,39 @@ textarea:focus {
         font-size: 22px;
     }
 }
+
+.btn-ghost {
+    margin-left: auto;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-ghost:hover {
+    color: var(--text-primary);
+    border-color: var(--border-light);
+    background: var(--bg-hover);
+}
+
+.header {
+    position: relative;
+}
+
+#logoutBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+@media (max-width: 768px) {
+    #logoutBtn {
+        position: static;
+        align-self: flex-end;
+    }
+}

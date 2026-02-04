@@ -6,7 +6,7 @@
 const API_BASE = '/api';
 
 // 状态
-let selectedRole = 'standard-user';
+let selectedRole = 'account-admin';
 let isProcessing = false;
 let stats = { total: 0, success: 0, failed: 0 };
 
@@ -289,3 +289,14 @@ document.head.appendChild(style);
 
 // 初始化
 console.log('ChatGPT Owner 降级控制台已加载');
+
+
+async function logout() {
+    try {
+        await fetch('/api/logout', { method: 'POST' });
+    } catch (e) {
+        // ignore
+    } finally {
+        window.location.href = '/login';
+    }
+}
