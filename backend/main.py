@@ -135,7 +135,7 @@ def extract_user_info(token: str, session_data: dict = None) -> dict:
     
     try:
         payload = decode_jwt_payload(token)
-        auth_info = payload.get("https://api.openai.com/auth ", {})
+        auth_info = payload.get("https://api.openai.com/auth", {})
         account_user_id = auth_info.get("chatgpt_account_user_id", "")
         
         if account_user_id:
@@ -149,7 +149,7 @@ def extract_user_info(token: str, session_data: dict = None) -> dict:
                 if not result["user_id"]:
                     result["user_id"] = account_user_id
         
-        profile = payload.get("https://api.openai.com/profile ", {})
+        profile = payload.get("https://api.openai.com/profile", {})
         if not result["email"]:
             result["email"] = profile.get("email")
             
@@ -318,12 +318,12 @@ def execute_demote_sync(access_token: str, account_id: str, user_id: str, role: 
         page = browser.latest_tab
         
         logger.info("[Sync] 打开 chatgpt.com...")
-        page.get('https://chatgpt.com ')
+        page.get('https://chatgpt.com')
         inject_anti_detection(page)
         page.wait.doc_loaded()
         time.sleep(2)
         
-        url = f"https://chatgpt.com/backend-api/accounts/ {account_id}/users/{user_id}"
+        url = f"https://chatgpt.com/backend-api/accounts/{account_id}/users/{user_id}"
         logger.info(f"[Sync] 目标 API: {url}")
         
         js_code = f'''
